@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTPA Clinical Audit Poster</title>
+  <style>
+    :root {
+      --nhs-blue: #005EB8;
+      --nhs-dark-blue: #002F6C;
+      --nhs-red: #DA291C;
+      --nhs-amber: #D05F00;
+      --nhs-green: #007F3B;
+      --nhs-bg: #E8EDEE;
+      --text-main: #212B32;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #CAD4D8;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 1200px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: var(--nhs-dark-blue);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 8px solid var(--nhs-blue);
+    }
+
+    .header-text h1 {
+      font-size: 42px;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .header-text p {
+      font-size: 22px;
+      color: #92C1EB;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .trust-logo {
+      height: 70px;
+      background: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    /* Main Content */
+    main {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Audit Data Grid */
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: var(--nhs-bg);
+      border-top: 8px solid var(--nhs-blue);
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-card.alert { border-color: var(--nhs-red); }
+    .stat-card.success { border-color: var(--nhs-green); }
+    .stat-card.info { border-color: var(--nhs-amber); }
+
+    .stat-val {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--nhs-dark-blue);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat-card.alert .stat-val { color: var(--nhs-red); }
+    .stat-card.success .stat-val { color: var(--nhs-green); }
+
+    .stat-label {
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .stat-sub {
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 8px;
+      color: #556670;
+    }
+
+    .stat-card.alert .stat-sub { color: var(--nhs-red); }
+    .stat-card.success .stat-sub { color: var(--nhs-green); }
+
+    /* Core Clinical Rules Grid */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .rule-card {
+      border: 3px solid #D8DDE0;
+      border-radius: 12px;
+      padding: 32px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rule-card.primary {
+      border-color: var(--nhs-blue);
+      background: #F4F9FD;
+    }
+
+    .rule-card.secondary {
+      border-color: var(--nhs-amber);
+      background: #FFFBF5;
+    }
+
+    .rule-card h2 {
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--nhs-dark-blue);
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+      padding-bottom: 16px;
+    }
+
+    .rule-card.secondary h2 { color: var(--nhs-amber); }
+
+    ul.clinical-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex-grow: 1;
+    }
+
+    ul.clinical-list li {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.45;
+      padding-left: 32px;
+      position: relative;
+    }
+
+    ul.clinical-list li::before {
+      content: "■";
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: var(--nhs-blue);
+      font-size: 18px;
+    }
+
+    .secondary ul.clinical-list li::before { color: var(--nhs-amber); }
+
+    ul.clinical-list li strong {
+      font-weight: 800;
+      color: var(--nhs-dark-blue);
+    }
+    
+    .secondary ul.clinical-list li strong {
+      color: #944500;
+    }
+
+    /* QR Code Integration */
+    .qr-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #FFFFFF;
+      border: 2px solid #B3D7ED;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+
+    .qr-section img {
+      width: 110px;
+      height: 110px;
+      border-radius: 4px;
+    }
+
+    .qr-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--nhs-dark-blue);
+      line-height: 1.2;
+    }
+
+    /* Formula Banner */
+    .formula-banner {
+      background: #FFF5E6;
+      border: 4px solid var(--nhs-amber);
+      border-radius: 12px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .formula-text {
+      max-width: 65%;
+    }
+
+    .formula-text h3 {
+      font-size: 28px;
+      font-weight: 900;
+      color: #944500;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    
+    .formula-text p {
+      font-size: 22px;
+      font-weight: 600;
+      color: #6E3B00;
+      line-height: 1.35;
+    }
+
+    .formula-box {
+      background: #FFFFFF;
+      border: 3px dashed var(--nhs-amber);
+      padding: 20px 36px;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--nhs-dark-blue);
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    /* Referral Block */
+    .vetting-block {
+      background: var(--nhs-dark-blue);
+      color: #FFFFFF;
+      padding: 32px 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .vetting-block h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #FFD43B;
+      text-transform: uppercase;
+      line-height: 1.3;
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    .vetting-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .check-item {
+      background: rgba(255,255,255,0.1);
+      border: 3px solid rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 22px;
+      font-weight: 900;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media print {
+      body { background: none; padding: 0; }
+      .poster { box-shadow: none; max-width: 100%; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poster">
+    <header>
+      <div class="header-text">
+        <h1>Appropriate Use of CTPA</h1>
+        <p>Diagnostic Stewardship in Suspected Pulmonary Embolism</p>
+      </div>
+      <img src="https://www.nth.nhs.uk/wp-content/themes/karabiner/assets/imgs/logo.svg" alt="Trust Logo" class="trust-logo">
+    </header>
+
+    <main>
+      <!-- Audit Data -->
+      <div class="audit-grid">
+        <div class="stat-card alert">
+          <div class="stat-val">14.0%<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-label">Local PE Detection Rate<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-sub">RCR Benchmark: ≥15%<span style="display:none;">[cite: 1]</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">88.0%<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-label">Pathway Adherence<span style="display:none;">[cite: 1]</span></div>
+        </div>
+        <div class="stat-card success">
+          <div class="stat-val">16.7%<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-label">Optimised Detection Rate<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-sub">Via Age-Adjusted D-Dimer<span style="display:none;">[cite: 1]</span></div>
+        </div>
+        <div class="stat-card info">
+          <div class="stat-val">68.0%<span style="display:none;">[cite: 1]</span></div>
+          <div class="stat-label">Alternative Pathology<span style="display:none;">[cite: 1]</span></div>
+        </div>
+      </div>
+
+      <!-- High Impact Formula -->
+      <div class="formula-banner">
+        <div class="formula-text">
+          <h3>Age-Adjusted D-Dimer (Patients > 50 Years)</h3>
+          <p>Standard analytical cut-offs may yield false positive results.<span style="display:none;">[cite: 2]</span> If the laboratory value falls below the adjusted threshold, PE may be reasonably excluded, and CTPA is generally not indicated.<span style="display:none;">[cite: 1]</span></p>
+        </div>
+        <div class="formula-box">Age × 0.01 mg/L</div>
+      </div>
+
+      <!-- Core Clinical Rules -->
+      <div class="rules-grid">
+        <div class="rule-card primary">
+          <h2>1. Diagnostic Pathway Adherence</h2>
+          <ul class="clinical-list">
+            <li><strong>Two-Level Wells Score:</strong> Please ensure this is calculated and documented prior to requesting advanced imaging.<span style="display:none;">[cite: 1]</span></li>
+            <li><strong>Wells > 4.0:</strong> CTPA is clinically indicated.<span style="display:none;">[cite: 1]</span></li>
+            <li><strong>Wells ≤ 4.0:</strong> A D-Dimer assay is a requisite preliminary investigation.<span style="display:none;">[cite: 1]</span></li>
+            <li><strong>Threshold Guidance:</strong> The clinical audit highlighted instances where CTPA was requested despite D-Dimer values remaining below the required referral threshold.<span style="display:none;">[cite: 1]</span></li>
+          </ul>
+          <div class="qr-section">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.mdcalc.com/calc/115/wells-criteria-pulmonary-embolism" alt="MDCalc Wells Score QR">
+            <div class="qr-text">MDCalc Two-Level PE Wells Score</div>
+          </div>
+        </div>
+
+        <div class="rule-card secondary">
+          <h2>2. Clinical Stewardship & Safety</h2>
+          <ul class="clinical-list">
+            <li><strong>Clinical Context:</strong> 68% of local CTPA scans demonstrated alternative pathology.<span style="display:none;">[cite: 1]</span> Such findings offer supplementary diagnostic utility rather than serving as the primary justification for a CTPA referral.<span style="display:none;">[cite: 1]</span></li>
+            <li><strong>Radiation Considerations:</strong> CTPA delivers a substantially higher dose of ionising radiation compared to modalities such as chest XR or non-contrast CT.<span style="display:none;">[cite: 1]</span></li>
+            <li><strong>Patient Safety:</strong> Please consider alternative, lower-risk imaging modalities if the clinical suspicion for pulmonary embolism is low.<span style="display:none;">[cite: 1]</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Vetting Rejections / Prompt -->
+      <div class="vetting-block">
+        <h2>Please Consider Before Referral:</h2>
+        <div class="vetting-checklist">
+          <div class="check-item">1. Two-Level Wells Score</div>
+          <div class="check-item">2. D-Dimer Result (mg/L)</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
