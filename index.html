@@ -314,9 +314,82 @@
       justify-content: center;
     }
 
+    /* =========================================
+       Mobile Responsiveness 
+       ========================================= */
+    @media (max-width: 992px) {
+      .audit-grid {
+        grid-template-columns: 1fr 1fr; /* 4 columns become 2 */
+      }
+      .rules-grid {
+        grid-template-columns: 1fr; /* 2 columns become 1 */
+      }
+      .formula-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+      .formula-text {
+        max-width: 100%;
+      }
+      .vetting-block {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+      .vetting-block h2 {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+      .header-text h1 {
+        font-size: 32px;
+      }
+      .header-text p {
+        font-size: 16px;
+      }
+      .audit-grid {
+        grid-template-columns: 1fr; /* 2 columns become 1 */
+      }
+      .vetting-checklist {
+        grid-template-columns: 1fr; /* Checks stack on top of each other */
+      }
+      .qr-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* =========================================
+       A3 Print Configuration 
+       ========================================= */
+    @page {
+      /* Force printer dialog to A3 Landscape and set a small bleed edge */
+      size: A3 landscape;
+      margin: 10mm;
+    }
+
     @media print {
-      body { background: none; padding: 0; }
-      .poster { box-shadow: none; max-width: 100%; border-radius: 0; }
+      body { 
+        background: none; 
+        padding: 0; 
+        margin: 0;
+        /* Force browsers to print the NHS background colors */
+        -webkit-print-color-adjust: exact !important; 
+        print-color-adjust: exact !important; 
+      }
+      .poster { 
+        box-shadow: none; 
+        max-width: 100%; 
+        border-radius: 0; 
+        margin: 0;
+      }
     }
   </style>
 </head>
@@ -383,7 +456,7 @@
           <h2>2. Clinical Stewardship & Safety</h2>
           <ul class="clinical-list">
             <li><strong>Clinical Context:</strong> 68% of local CTPA scans demonstrated alternative pathology. Such findings offer supplementary diagnostic utility rather than serving as the primary justification for a CTPA referral.</li>
-            <li><strong>Radiation Considerations:</strong> CTPA delivers a substantially higher dose of ionising radiation compared to baseline modalities like a chest XR (roughly 40-80x higher)</li>
+            <li><strong>Radiation Considerations:</strong> CTPA delivers a substantially higher dose of ionising radiation compared to baseline modalities like a chest XR (roughly 40-80x higher), and exposes the patient to similar radiation levels as a standard chest CT.</li>
             <li><strong>Patient Safety:</strong> Please consider alternative, lower-risk imaging modalities if the clinical suspicion for pulmonary embolism is low.</li>
           </ul>
         </div>
