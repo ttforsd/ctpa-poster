@@ -32,7 +32,7 @@
 
     .poster {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1000px;
       background: #FFFFFF;
       border-radius: 8px;
       box-shadow: 0 12px 36px rgba(0,0,0,0.2);
@@ -52,7 +52,7 @@
     }
 
     .header-text h1 {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 900;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -61,7 +61,7 @@
     }
 
     .header-text p {
-      font-size: 22px;
+      font-size: 20px;
       color: #92C1EB;
       font-weight: 700;
       text-transform: uppercase;
@@ -69,31 +69,31 @@
     }
 
     .trust-logo {
-      height: 70px;
+      height: 65px;
       background: #FFFFFF;
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 6px;
     }
 
     /* Main Content */
     main {
-      padding: 40px;
+      padding: 36px 40px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 28px;
     }
 
     /* Audit Data Grid */
     .audit-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .stat-card {
       background: var(--nhs-bg);
-      border-top: 8px solid var(--nhs-blue);
-      padding: 24px;
+      border-top: 6px solid var(--nhs-blue);
+      padding: 20px 16px;
       border-radius: 8px;
       text-align: center;
       display: flex;
@@ -106,27 +106,27 @@
     .stat-card.info { border-color: var(--nhs-amber); }
 
     .stat-val {
-      font-size: 52px;
+      font-size: 46px;
       font-weight: 900;
       color: var(--nhs-dark-blue);
       line-height: 1;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .stat-card.alert .stat-val { color: var(--nhs-red); }
     .stat-card.success .stat-val { color: var(--nhs-green); }
 
     .stat-label {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
       text-transform: uppercase;
       color: var(--text-main);
     }
 
     .stat-sub {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 700;
-      margin-top: 8px;
+      margin-top: 6px;
       color: #556670;
     }
 
@@ -137,13 +137,13 @@
     .rules-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 24px;
     }
 
     .rule-card {
       border: 3px solid #D8DDE0;
-      border-radius: 12px;
-      padding: 32px;
+      border-radius: 10px;
+      padding: 26px;
       background: #FFFFFF;
       display: flex;
       flex-direction: column;
@@ -160,13 +160,13 @@
     }
 
     .rule-card h2 {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       color: var(--nhs-dark-blue);
-      border-bottom: 3px solid rgba(0,0,0,0.1);
-      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+      padding-bottom: 12px;
     }
 
     .rule-card.secondary h2 { color: var(--nhs-amber); }
@@ -175,15 +175,15 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
       flex-grow: 1;
     }
 
     ul.clinical-list li {
-      font-size: 19px;
+      font-size: 17px;
       font-weight: 600;
-      line-height: 1.45;
-      padding-left: 32px;
+      line-height: 1.4;
+      padding-left: 26px;
       position: relative;
     }
 
@@ -191,9 +191,9 @@
       content: "■";
       position: absolute;
       left: 0;
-      top: 3px;
+      top: 2px;
       color: var(--nhs-blue);
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .secondary ul.clinical-list li::before { color: var(--nhs-amber); }
@@ -211,36 +211,37 @@
     .qr-section {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       background: #FFFFFF;
       border: 2px solid #B3D7ED;
-      padding: 20px;
+      padding: 16px;
       border-radius: 8px;
-      margin-top: 24px;
+      margin-top: 18px;
     }
 
     .qr-section img {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
       border-radius: 4px;
     }
 
     .qr-text {
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 800;
       color: var(--nhs-dark-blue);
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     /* Formula Banner */
     .formula-banner {
       background: #FFF5E6;
-      border: 4px solid var(--nhs-amber);
-      border-radius: 12px;
-      padding: 32px 40px;
+      border: 3px solid var(--nhs-amber);
+      border-radius: 10px;
+      padding: 24px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .formula-text {
@@ -248,15 +249,15 @@
     }
 
     .formula-text h3 {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 900;
       color: #944500;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     
     .formula-text p {
-      font-size: 22px;
+      font-size: 17px;
       font-weight: 600;
       color: #6E3B00;
       line-height: 1.35;
@@ -265,11 +266,11 @@
     .formula-box {
       background: #FFFFFF;
       border: 3px dashed var(--nhs-amber);
-      padding: 20px 36px;
-      font-size: 42px;
+      padding: 16px 28px;
+      font-size: 34px;
       font-weight: 900;
       color: var(--nhs-dark-blue);
-      border-radius: 12px;
+      border-radius: 10px;
       white-space: nowrap;
     }
 
@@ -277,37 +278,37 @@
     .vetting-block {
       background: var(--nhs-dark-blue);
       color: #FFFFFF;
-      padding: 32px 40px;
-      border-radius: 12px;
+      padding: 24px 30px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
     }
 
     .vetting-block h2 {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 900;
       color: #FFD43B;
       text-transform: uppercase;
       line-height: 1.3;
-      width: 320px;
+      width: 280px;
       flex-shrink: 0;
     }
 
     .vetting-checklist {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
       flex: 1;
     }
 
     .check-item {
       background: rgba(255,255,255,0.1);
-      border: 3px solid rgba(255,255,255,0.2);
-      padding: 20px;
-      border-radius: 8px;
-      font-size: 22px;
-      font-weight: 900;
+      border: 2px solid rgba(255,255,255,0.25);
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 19px;
+      font-weight: 800;
       text-align: center;
       display: flex;
       align-items: center;
@@ -315,109 +316,174 @@
     }
 
     /* =========================================
-       Mobile Responsiveness 
+       Screen Responsiveness
        ========================================= */
-    @media (max-width: 992px) {
-      .audit-grid {
-        grid-template-columns: 1fr 1fr; /* 4 columns become 2 */
-      }
-      .rules-grid {
-        grid-template-columns: 1fr; /* 2 columns become 1 */
-      }
-      .formula-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-      }
-      .formula-text {
-        max-width: 100%;
-      }
-      .vetting-block {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-      }
-      .vetting-block h2 {
-        width: 100%;
-      }
+    @media (max-width: 900px) {
+      .audit-grid { grid-template-columns: 1fr 1fr; }
+      .rules-grid { grid-template-columns: 1fr; }
+      .formula-banner { flex-direction: column; text-align: center; }
+      .formula-text { max-width: 100%; }
+      .vetting-block { flex-direction: column; text-align: center; }
+      .vetting-block h2 { width: 100%; }
     }
 
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-      }
-      .header-text h1 {
-        font-size: 32px;
-      }
-      .header-text p {
-        font-size: 16px;
-      }
-      .audit-grid {
-        grid-template-columns: 1fr; /* 2 columns become 1 */
-      }
-      .vetting-checklist {
-        grid-template-columns: 1fr; /* Checks stack on top of each other */
-      }
-      .qr-section {
-        flex-direction: column;
-        text-align: center;
-      }
+      header { flex-direction: column; text-align: center; gap: 18px; }
+      .audit-grid { grid-template-columns: 1fr; }
+      .vetting-checklist { grid-template-columns: 1fr; }
+      .qr-section { flex-direction: column; text-align: center; }
     }
 
-/* =========================================
-       A3 Print Configuration 
+    /* =========================================
+       Strict A3 Portrait Print Configuration
+       Dimensions: 297mm x 420mm (Ratio: 1:1.414)
        ========================================= */
     @page {
-      size: A3 landscape;
-      margin: 8mm; /* Tight margins to maximise printable area */
+      size: A3 portrait;
+      margin: 0; /* Zero margin ensures container maintains true 297x420mm aspect ratio */
     }
 
     @media print {
       html, body {
-        background: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
+        width: 297mm;
+        height: 420mm;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
 
       .poster {
-        box-shadow: none !important;
-        max-width: 100% !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        width: 297mm;
+        height: 420mm;
+        max-width: 297mm;
+        max-height: 420mm;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        overflow: hidden;
       }
 
-      /* Compact vertical padding so everything fits on 1 sheet */
       header {
-        padding: 20px 32px !important;
+        padding: 16mm 20mm;
+        flex-shrink: 0;
+      }
+
+      .header-text h1 {
+        font-size: 34pt;
+      }
+
+      .header-text p {
+        font-size: 17pt;
+      }
+
+      .trust-logo {
+        height: 58px;
       }
 
       main {
-        padding: 24px 32px !important;
-        gap: 20px !important; /* Reduces vertical gap between sections */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 20mm 18mm 20mm;
+        gap: 8mm;
+      }
+
+      .audit-grid {
+        gap: 6mm;
       }
 
       .stat-card {
-        padding: 16px !important;
+        padding: 6mm 4mm;
       }
 
-      .rule-card {
-        padding: 20px 24px !important;
+      .stat-val {
+        font-size: 38pt;
+      }
+
+      .stat-label {
+        font-size: 13pt;
+      }
+
+      .stat-sub {
+        font-size: 11pt;
       }
 
       .formula-banner {
-        padding: 20px 28px !important;
+        padding: 6mm 10mm;
+      }
+
+      .formula-text h3 {
+        font-size: 18pt;
+      }
+
+      .formula-text p {
+        font-size: 13pt;
+      }
+
+      .formula-box {
+        font-size: 26pt;
+        padding: 4mm 8mm;
+      }
+
+      .rules-grid {
+        gap: 8mm;
+        flex-grow: 1;
+      }
+
+      .rule-card {
+        padding: 7mm;
+      }
+
+      .rule-card h2 {
+        font-size: 18pt;
+        margin-bottom: 5mm;
+        padding-bottom: 3mm;
+      }
+
+      ul.clinical-list {
+        gap: 4mm;
+      }
+
+      ul.clinical-list li {
+        font-size: 13pt;
+        line-height: 1.35;
+      }
+
+      .qr-section {
+        margin-top: 5mm;
+        padding: 4mm;
+      }
+
+      .qr-section img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .qr-text {
+        font-size: 13pt;
       }
 
       .vetting-block {
-        padding: 20px 28px !important;
+        padding: 6mm 10mm;
+      }
+
+      .vetting-block h2 {
+        font-size: 18pt;
+        width: 250px;
+      }
+
+      .check-item {
+        font-size: 15pt;
+        padding: 5mm;
       }
     }
   </style>
