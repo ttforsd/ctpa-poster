@@ -83,6 +83,108 @@
       gap: 28px;
     }
 
+    /* Hero Action Banner */
+    .take-home-banner {
+      background: var(--nhs-dark-blue);
+      border-radius: 12px;
+      padding: 32px 36px;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(0,47,108,0.15);
+      border: 4px solid var(--nhs-blue);
+    }
+
+    .take-home-banner h2 {
+      color: #FFD43B;
+      font-size: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .take-home-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.25fr;
+      gap: 24px;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.08);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-card.highlight-step {
+      background: #FFF5E6;
+      border-color: var(--nhs-amber);
+      color: var(--text-main);
+    }
+
+    .step-num {
+      position: absolute;
+      top: -18px;
+      left: -18px;
+      background: var(--nhs-blue);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      border: 4px solid #FFFFFF;
+    }
+
+    .step-card.highlight-step .step-num {
+      background: var(--nhs-amber);
+    }
+
+    .step-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .step-card.highlight-step h3 {
+      color: #944500;
+    }
+
+    .step-card p {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #E8EDEE;
+    }
+    
+    .step-card.highlight-step p {
+      color: #6E3B00;
+    }
+
+    /* Highlight class for threshold values (Text only) */
+    .val-highlight {
+      color: #FFD43B;
+      font-weight: 900;
+      font-size: 1.15em;
+    }
+
+    .big-formula {
+      background: #FFFFFF;
+      border: 3px dashed var(--nhs-amber);
+      padding: 12px;
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+      margin-top: 16px;
+      border-radius: 8px;
+      color: var(--nhs-dark-blue);
+    }
+
     /* Audit Data Grid */
     .audit-grid {
       display: grid;
@@ -232,115 +334,23 @@
       line-height: 1.25;
     }
 
-    /* Formula Banner */
-    .formula-banner {
-      background: #FFF5E6;
-      border: 3px solid var(--nhs-amber);
-      border-radius: 10px;
-      padding: 24px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .formula-text {
-      max-width: 65%;
-    }
-
-    .formula-text h3 {
-      font-size: 22px;
-      font-weight: 900;
-      color: #944500;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    
-    .formula-text p {
-      font-size: 17px;
-      font-weight: 600;
-      color: #6E3B00;
-      line-height: 1.35;
-    }
-
-    .formula-box {
-      background: #FFFFFF;
-      border: 3px dashed var(--nhs-amber);
-      padding: 16px 28px;
-      font-size: 34px;
-      font-weight: 900;
-      color: var(--nhs-dark-blue);
-      border-radius: 10px;
-      white-space: nowrap;
-    }
-
-    /* Referral Block */
-    .vetting-block {
-      background: var(--nhs-dark-blue);
-      color: #FFFFFF;
-      padding: 24px 30px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .vetting-block h2 {
-      font-size: 22px;
-      font-weight: 900;
-      color: #FFD43B;
-      text-transform: uppercase;
-      line-height: 1.3;
-      width: 280px;
-      flex-shrink: 0;
-    }
-
-    .vetting-checklist {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      flex: 1;
-    }
-
-    .check-item {
-      background: rgba(255,255,255,0.1);
-      border: 2px solid rgba(255,255,255,0.25);
-      padding: 16px;
-      border-radius: 6px;
-      font-size: 19px;
-      font-weight: 800;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* =========================================
-       Screen Responsiveness
-       ========================================= */
+    /* Screen Responsiveness */
     @media (max-width: 900px) {
+      .take-home-steps { grid-template-columns: 1fr; }
       .audit-grid { grid-template-columns: 1fr 1fr; }
       .rules-grid { grid-template-columns: 1fr; }
-      .formula-banner { flex-direction: column; text-align: center; }
-      .formula-text { max-width: 100%; }
-      .vetting-block { flex-direction: column; text-align: center; }
-      .vetting-block h2 { width: 100%; }
     }
 
     @media (max-width: 600px) {
       header { flex-direction: column; text-align: center; gap: 18px; }
       .audit-grid { grid-template-columns: 1fr; }
-      .vetting-checklist { grid-template-columns: 1fr; }
       .qr-section { flex-direction: column; text-align: center; }
     }
 
-    /* =========================================
-       Strict A3 Portrait Print Configuration
-       Dimensions: 297mm x 420mm (Ratio: 1:1.414)
-       ========================================= */
+    /* Strict A3 Portrait Print Configuration */
     @page {
       size: A3 portrait;
-      margin: 0; /* Zero margin ensures container maintains true 297x420mm aspect ratio */
+      margin: 0; 
     }
 
     @media print {
@@ -376,17 +386,9 @@
         flex-shrink: 0;
       }
 
-      .header-text h1 {
-        font-size: 34pt;
-      }
-
-      .header-text p {
-        font-size: 17pt;
-      }
-
-      .trust-logo {
-        height: 58px;
-      }
+      .header-text h1 { font-size: 34pt; }
+      .header-text p { font-size: 17pt; }
+      .trust-logo { height: 58px; }
 
       main {
         flex: 1;
@@ -397,62 +399,49 @@
         gap: 8mm;
       }
 
-      .audit-grid {
-        gap: 6mm;
+      .take-home-banner {
+        padding: 8mm 10mm;
+        border-radius: 12px;
+        border-width: 4px;
       }
 
-      .stat-card {
-        padding: 6mm 4mm;
+      .take-home-banner h2 {
+        font-size: 22pt;
+        margin-bottom: 8mm;
       }
 
-      .stat-val {
-        font-size: 38pt;
+      .take-home-steps { gap: 8mm; }
+      .step-card { padding: 6mm; border-width: 3px; }
+      .step-num { width: 14mm; height: 14mm; font-size: 18pt; border-width: 4px; top: -7mm; left: -7mm; }
+      .step-card h3 { font-size: 18pt; margin-bottom: 3mm; }
+      .step-card p { font-size: 13pt; line-height: 1.35; }
+      
+      .big-formula {
+        font-size: 21pt;
+        padding: 4mm 0;
+        margin-top: 4mm;
+        border-width: 3px;
       }
 
-      .stat-label {
-        font-size: 13pt;
-      }
-
-      .stat-sub {
-        font-size: 11pt;
-      }
-
-      .formula-banner {
-        padding: 6mm 10mm;
-      }
-
-      .formula-text h3 {
-        font-size: 18pt;
-      }
-
-      .formula-text p {
-        font-size: 13pt;
-      }
-
-      .formula-box {
-        font-size: 26pt;
-        padding: 4mm 8mm;
-      }
+      .audit-grid { gap: 6mm; }
+      .stat-card { padding: 6mm 4mm; }
+      .stat-val { font-size: 38pt; }
+      .stat-label { font-size: 13pt; }
+      .stat-sub { font-size: 11pt; }
 
       .rules-grid {
         gap: 8mm;
         flex-grow: 1;
       }
 
-      .rule-card {
-        padding: 7mm;
-      }
-
+      .rule-card { padding: 7mm; }
       .rule-card h2 {
         font-size: 18pt;
         margin-bottom: 5mm;
         padding-bottom: 3mm;
       }
 
-      ul.clinical-list {
-        gap: 4mm;
-      }
-
+      ul.clinical-list { gap: 4mm; }
       ul.clinical-list li {
         font-size: 13pt;
         line-height: 1.35;
@@ -462,29 +451,8 @@
         margin-top: 5mm;
         padding: 4mm;
       }
-
-      .qr-section img {
-        width: 80px;
-        height: 80px;
-      }
-
-      .qr-text {
-        font-size: 13pt;
-      }
-
-      .vetting-block {
-        padding: 6mm 10mm;
-      }
-
-      .vetting-block h2 {
-        font-size: 18pt;
-        width: 250px;
-      }
-
-      .check-item {
-        font-size: 15pt;
-        padding: 5mm;
-      }
+      .qr-section img { width: 80px; height: 80px; }
+      .qr-text { font-size: 13pt; }
     }
   </style>
 </head>
@@ -500,6 +468,29 @@
     </header>
 
     <main>
+      <!-- Actionable Take-Home Banner -->
+      <div class="take-home-banner">
+        <h2>Optimising CTPA Referrals: Key Steps</h2>
+        <div class="take-home-steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Wells Score</h3>
+            <p>Please calculate and document prior to requesting. If <span class="val-highlight">&gt; 4.0</span>, CTPA is indicated.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>D-Dimer</h3>
+            <p>A requisite preliminary step if Wells is <span class="val-highlight">&le; 4.0</span>. If negative, PE is unlikely and CTPA is rarely indicated.</p>
+          </div>
+          <div class="step-card highlight-step">
+            <div class="step-num">3</div>
+            <h3>Age Adjustment</h3>
+            <p>For patients <strong>> 50 years</strong> old, applying the adjusted threshold helps safely reduce false positives:</p>
+            <div class="big-formula">Age × 0.01 mg/L</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Audit Data -->
       <div class="audit-grid">
         <div class="stat-card alert">
@@ -522,28 +513,17 @@
         </div>
       </div>
 
-      <!-- High Impact Formula -->
-      <div class="formula-banner">
-        <div class="formula-text">
-          <h3>Age-Adjusted D-Dimer (Patients > 50 Years)</h3>
-          <p>Standard analytical cut-offs may yield false positive results. If the laboratory value falls below the adjusted threshold, PE may be reasonably excluded, and CTPA is generally not indicated.</p>
-        </div>
-        <div class="formula-box">Age × 0.01 mg/L</div>
-      </div>
-
       <!-- Core Clinical Rules -->
       <div class="rules-grid">
         <div class="rule-card primary">
-          <h2>1. Diagnostic Pathway Adherence</h2>
+          <h2>1. Diagnostic Pathway Deep-Dive</h2>
           <ul class="clinical-list">
-            <li><strong>Two-Level Wells Score:</strong> Please ensure this is calculated and documented prior to requesting advanced imaging.</li>
-            <li><strong>Wells > 4.0:</strong> CTPA is clinically indicated.</li>
-            <li><strong>Wells ≤ 4.0:</strong> A D-Dimer assay is a requisite preliminary investigation.</li>
-            <li><strong>Threshold Guidance:</strong> The clinical audit highlighted instances where CTPA was requested despite D-Dimer values remaining below the required referral threshold.</li>
+            <li><strong>Audit Findings:</strong> The clinical audit identified opportunities to safely reduce unnecessary scans by adhering to the Trust protocol prior to requesting a CTPA.</li>
+            <li><strong>False Positives:</strong> Standard analytical cut-offs may yield false positive results in older adults. If the laboratory value falls below the adjusted threshold, PE may be reasonably excluded.</li>
           </ul>
           <div class="qr-section">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.mdcalc.com/calc/115/wells-criteria-pulmonary-embolism" alt="MDCalc Wells Score QR">
-            <div class="qr-text">MDCalc Two-Level PE Wells Score</div>
+            <div class="qr-text">Scan for MDCalc Two-Level PE Wells Score</div>
           </div>
         </div>
 
@@ -554,15 +534,6 @@
             <li><strong>Radiation Considerations:</strong> CTPA delivers a substantially higher dose of ionising radiation compared to baseline modalities like a chest XR (roughly 40-80x higher), and exposes the patient to similar radiation levels as a standard chest CT.</li>
             <li><strong>Patient Safety:</strong> Please consider alternative, lower-risk imaging modalities if the clinical suspicion for pulmonary embolism is low.</li>
           </ul>
-        </div>
-      </div>
-
-      <!-- Vetting Rejections / Prompt -->
-      <div class="vetting-block">
-        <h2>Please Consider Before Referral:</h2>
-        <div class="vetting-checklist">
-          <div class="check-item">1. Two-Level Wells Score</div>
-          <div class="check-item">2. D-Dimer Result (mg/L)</div>
         </div>
       </div>
     </main>
