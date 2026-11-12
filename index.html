@@ -366,29 +366,58 @@
       }
     }
 
-    /* =========================================
+/* =========================================
        A3 Print Configuration 
        ========================================= */
     @page {
-      /* Force printer dialog to A3 Landscape and set a small bleed edge */
       size: A3 landscape;
-      margin: 10mm;
+      margin: 8mm; /* Tight margins to maximise printable area */
     }
 
     @media print {
-      body { 
-        background: none; 
-        padding: 0; 
-        margin: 0;
-        /* Force browsers to print the NHS background colors */
-        -webkit-print-color-adjust: exact !important; 
-        print-color-adjust: exact !important; 
+      html, body {
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
-      .poster { 
-        box-shadow: none; 
-        max-width: 100%; 
-        border-radius: 0; 
-        margin: 0;
+
+      .poster {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      /* Compact vertical padding so everything fits on 1 sheet */
+      header {
+        padding: 20px 32px !important;
+      }
+
+      main {
+        padding: 24px 32px !important;
+        gap: 20px !important; /* Reduces vertical gap between sections */
+      }
+
+      .stat-card {
+        padding: 16px !important;
+      }
+
+      .rule-card {
+        padding: 20px 24px !important;
+      }
+
+      .formula-banner {
+        padding: 20px 28px !important;
+      }
+
+      .vetting-block {
+        padding: 20px 28px !important;
       }
     }
   </style>
